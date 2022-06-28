@@ -18,7 +18,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import useGetHook from '../CustomHooks/useGetHooks'
 import { APIS } from './api/hello';
 
-const index = () => {
+const Index = () => {
   const { isLoading: navigationLoading, data: postData } = useGetHook(
     {
       queryKey: "postData",
@@ -89,4 +89,4 @@ const index = () => {
   );
 }
 
-export default index
+export default Index
