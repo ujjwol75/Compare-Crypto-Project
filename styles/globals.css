@@ -1,0 +1,657 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Topnavfirst */
+
+
+.header-wrapper{
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid gainsboro;
+}
+
+.header-inner1{
+  font-size: small;
+}
+
+.header-inner1 span{
+  padding: 0px 6px;
+}
+
+.header-inner2{
+  display: flex;
+  font-size: 14px;
+}
+
+.header-logo{
+  padding: 0px 20px;
+}
+
+.sub-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.header-socialmedia{
+  width: 105px;
+}
+
+.icons{
+  margin-left: 10px;
+}
+
+
+.navmenu{
+  display: none;
+}
+
+.bitcoinlogo{
+  max-width: 350px;
+  overflow: hidden;
+}
+
+.bitcoinlogo-image{
+  max-width: 350px;
+}
+
+/* sidebar */
+
+.sidebar-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid gainsboro;
+  position: absolute;
+  background: white;
+  color: #000;
+  top: 60px;
+  left: 0;
+  height: max-content;
+  max-width: 360px;
+  z-index: 10;
+}
+
+.sidebar-open{
+  transform: translate(500px);
+   transition: ease-in-out 0.4s;
+}
+
+.sidebar{
+  width: 80%;
+}
+.sidebar-p {
+  margin: 30px 0;
+}
+
+.accordian{
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.accordian-inner{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.sidelist ul li{
+  list-style: none;
+  padding: 5px 0;
+}
+
+.sidebar-last-p{
+  font-size: small;
+  padding:5px 0;
+}
+
+/* .sidebar-open{
+  transform: translate(100%);
+} */
+
+/* Navbar ul */
+
+
+.navbar-ul{
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  align-items: center;
+  list-style: none;
+  background-color: black;
+  color: white;
+  padding: 30px;
+  margin: 20px 40px;
+  width: 93vw;
+}
+
+.navbar-list{
+  color: rgb(231, 98, 8);
+}
+
+.dropbtn {
+  background-color: #000;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+.dropdown:hover .dropdown-content {display: block;}
+/* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
+
+/*Recent News */
+
+.recent-news-wrapper{
+  display: flex;
+  justify-content: center;
+
+}
+
+.news{
+  width: 400px;
+  height: 380px;
+  overflow: hidden;
+  color: white;
+  position: relative;
+}
+
+
+.recent-inner{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height:100px;
+  position: absolute;
+  bottom: 0px;
+  background: black;
+  opacity: 0.7;
+}
+.recent-inner p{
+  font-size: small;
+}
+
+.recentnews-image{
+  width: 400px;
+  object-fit: contain;
+}
+
+
+.recent-span{
+  color: blue;
+}
+
+
+/* Banner */
+.banner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* latest news   */
+
+.latestnews-wrapper{
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  border-radius: 5px;
+  margin: 10px;
+  overflow: hidden;
+}
+
+.latestnews-wrapper-inner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border:1px solid gainsboro;
+  padding: 5px;
+
+}
+
+
+.latest-news-div{
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.latest-news-span1{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: rgb(68, 67, 67);
+  font-size: small;
+  
+}
+
+.latest-news-span{
+  color: rgb(68, 67, 67);
+  font-size: small;
+}
+
+.latest-news-span2{
+  color: blue;
+}
+
+.latestnews-image{
+  height:300px;
+  object-fit: fill;
+}
+
+.latestnews-font{
+  font-size: large;
+}
+
+
+/* Premium */
+
+.premium-image{
+  height: 40px;
+  width: 140px;
+  margin: 20px 0;
+}
+
+
+/* Topbroker */
+
+.topbroker-wrapper{
+  display: flex;
+  font-size: small;
+}
+
+.topbroker-image{
+  height: 50px;
+  width: 60px;
+  border-radius: 5px;
+  margin: 20px 10px 20px 0;
+}
+
+/* Top casino */
+
+.topcasino-wrapper{
+  display: flex;
+  font-size: small;
+}
+
+/* press release */
+.pressrelease-wrapper{
+  display: flex;
+  padding: 10px 0;
+}
+
+.pressrelease-inner{
+  display: flex;
+  flex-direction: column;
+  font-size: small;
+  margin-left: 10px;
+}
+
+
+/* Latest-news-outer */
+
+.latest-news-outer{
+  display: flex;
+  margin: 30px;
+}
+
+.latest-news-first-row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Footer */
+
+.footer-wrapper{
+  background: #181D23;
+  color: gainsboro;
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+  padding-top: 80px;
+}
+
+.footer-image{
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.footer-wrapper-inner{
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-inner1{
+  margin-top: 20px;
+  display: flex;
+}
+
+.footer-list{
+  display: flex;
+  flex-direction: column;
+  padding-left: 0px;
+  width: 150px;
+}
+
+.footer-ul li{
+  list-style: none;
+  padding-left: 0px;
+  margin-left: -32px;
+  font-size: small;
+
+}
+
+.footerspan{
+  font-size: small;
+  margin-top: 10px;
+  color: rgb(88, 87, 87);
+}
+
+.footer-ul{
+  margin-top: 20px;
+  color: rgb(88, 87, 87);
+}
+
+.footer-last{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.footer-span{
+  color: blue;
+}
+
+.footer-bottom{
+  border:1px solid blue;
+  padding: 5px 20px;
+  font-size: small;
+  margin-left: 10px;
+  border-radius: 5px;
+  margin-top: -12px;
+}
+
+.footer-bottom:hover{
+  background: blue;
+  color: white;
+}
+
+.footer-p{
+  font-size: small;
+  text-align: center;
+}
+
+.footer-icon{
+  margin: 5px;
+}
+
+
+
+/* Single page */
+
+.sinlgepage{
+  width: 65%;
+  line-height: 25px;
+}
+
+.singlepage-wrapper{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 60px;
+}
+
+
+/* Main-card */
+.main-card-wrapper{
+  padding: 30px 45px;
+  position: relative;
+}
+
+.main-card-inner{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 30%;
+  color: white;
+  align-items: center;
+  bottom: 60px;
+}
+
+.main-card-inner p{
+  color: rgb(190, 188, 188);
+}
+
+.main-card-inner span{
+  color: blue;
+}
+
+.main-card-image{
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.main-card-image-wrapper{
+  display: flex;
+  align-items: center;
+}
+
+
+.maincardimage{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Content */
+
+.content-wrapper p{
+  margin: 20px 0;
+  color: rgb(107, 107, 107);
+}
+
+.content-span{
+  color: blue;
+  cursor: pointer;
+}
+.content-span:hover{
+  color: black;
+}
+
+/* Social Media */
+
+.socialmedia{
+  border: 1px solid blue;
+  width: 40px;
+  padding: 10px;
+  border-radius: 5px;
+  background: blue;
+  color: white;
+  font-size: 20px;
+  margin: 5px;
+}
+
+/* Newsletter */
+
+.newsletter-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ .input{
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.btn{
+  padding: 10px 20px;
+  border: 1px solid blue;
+  outline: none;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+.btn:hover{
+  background: blue;
+  color: white;
+}
+
+.newsletter-inner2{
+  display: flex;
+  align-items: center;
+}
+
+.newsletter-inner2 p {
+  font-size: small;
+  margin-left: 5px;
+}
+
+
+/* Author */
+
+.author{
+  display: flex;
+}
+
+.author-image{
+  height: 100px;
+  width: 100px;
+  border-radius:50% ;
+  margin-right: 10px;
+}
+
+/* Recentpost */
+
+.recentpost-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.recentpost{
+  display: flex;
+  width: 350px;
+  margin: 20px 0;
+}
+
+.recentpost-image{
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.recentpost-inner p{
+   margin-top: 5px;
+   color: gray;
+   font-size: small;
+}
+
+
+.singlepage-hr{
+  margin: 20px 0;
+}
+
+
+/* Mediaquery */
+
+/* Header */
+
+@media (max-width:1053px) {
+  .header-wrapper,.banner,.icons,.header-socialmedia,.navbar,.navbar-ul{
+    display: none;
+  }
+
+  .latest-news-outer{
+    flex-direction: column;
+  }
+
+  .footer-wrapper{
+    flex-wrap: wrap;
+  }
+  .navmenu{
+    display: block;
+  }
+
+  .main-card-inner{
+    top: 10px;
+    left: 0;
+    position: static;
+    color: #000;
+  }
+    .newsletter-wrapper{
+    flex-direction: column;
+  }
+
+  .newsletter-inner .btn{
+    margin-top: 10px;
+  }
+
+  .recentpost{
+    flex-direction: column;
+  }
+
+  
+}
+
+@media (max-width:900px) {
+  .recent-news-wrapper{
+    flex-wrap: wrap;
+    justify-content: start;
+    padding-left: 20px;
+    padding-right: 20px;
+  } 
+}
+
+@media (max-width:500px) {
+  .bitcoinlogo{
+    max-width: 150px;
+    overflow: hidden;
+}
+
+  .bitcoinlogo-image{
+    max-width: 150px;
+}
+  
+}
