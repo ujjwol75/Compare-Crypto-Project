@@ -9,13 +9,7 @@ const LatestNews = (props) => {
         <img className="latestnews-image" src={props?.image} />
         <div className="latestnews-wrapper-inner">
           {/* {`/Singlepage?id=${id}`} */}
-          <Link href={{
-            pathname: `/Singlepage?id=${id}`,
-            query:{
-              curElem:props.title
-            }
-
-          }} as={`/Singlepage?id=${id}`}>
+          <Link href={`/detailpage/${id}`}>
             <a>
               <b className="latestnews-font">{props?.title?.slice(0, 60)}</b>
             </a>

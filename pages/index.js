@@ -55,7 +55,7 @@ const Index = () => {
 
         <div>
           <div>
-            <LatestNews title={postData?.results?.title} image={postData?.results?.image} author={postData?.results?.author} created={postData?.results?.created}/>
+            {/* <LatestNews title={postData?.results?.title} image={postData?.results?.image} author={postData?.results?.author} created={postData?.results?.created}/> */}
             <hr />
             <div>
               <b>Premium Partners</b>

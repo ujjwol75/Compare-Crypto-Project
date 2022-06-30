@@ -9,6 +9,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 import Sidebar from "./Sidebar";
 import Sidebarwrapper from "./sidebarcontent/Sidebarwrapper";
+import {useRouter} from "next/router";
+
 
 const Header = () => {
   const values = [true, "sm-down", "md-down", "lg-down", "xl-down", "xxl-down"];
@@ -16,10 +18,26 @@ const Header = () => {
   const [show, setShow] = useState(false);
   const [sidebar, setSidebar] = useState(false);
   const [change,setChange] = useState(false);
+  const [search,setSearch] = useState(false)
+  const [keyword, setKeyword] = useState('');
+
+  const router=useRouter()
 
   const handleClick = () => {
     setChange(!change);setSidebar(!sidebar);
   };
+
+  const iconClick = () =>{
+    setSearch(!search)
+    console.log("Button click");
+  }
+ 
+  const onclickHandler = (e) =>{
+    e.preventDefault();
+    if(keyword!== ''){
+      router.push(`/searchpage/${keyword}`);
+    }    
+  }
 
   return (
     <>
@@ -51,19 +69,38 @@ const Header = () => {
           <FaTelegramPlane className="icons" />
           <ImFacebook className="icons" />
         </div>
-        {
-          change? <ImCross onClick={handleClick}/>  : <GiHamburgerMenu className="navmenu" onClick={handleClick} /> 
-        }
+        {change ? (
+          <ImCross onClick={handleClick} />
+        ) : (
+          <GiHamburgerMenu className="navmenu" onClick={handleClick} />
+        )}
         {/* <GiHamburgerMenu className="navmenu" onClick={handleClick} /> */}
-        {sidebar && <Sidebarwrapper/>}
+        {sidebar && <Sidebarwrapper />}
         <div className="bitcoinlogo">
           <img
             className="bitcoinlogo-image"
             src="https://bitcoinist.com/wp-content/uploads/2021/04/Logo-min.png"
           />
         </div>
-        <div>
-          <FaSearch />
+        <div className="search-icon">
+          {search ? (
+            <ImCross onClick={iconClick} />
+          ) : (
+            <FaSearch onClick={iconClick} />
+          )}
+          {search && (
+            <div>
+              <div className="search-input-wrapper">
+                <input
+                  placeholder="Search..."
+                  className="search-input-box"
+                  value={keyword}
+                  onChange={(e) => setKeyword(e.target.value)}
+                />
+                <FaSearch className="input-search-icon" onClick={onclickHandler} />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </>

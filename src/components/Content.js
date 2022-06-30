@@ -1,10 +1,16 @@
 import React from 'react'
 
-const Content = () => {
+
+// import "bootstrap/dist/css/bootstrap.css";
+// import useGetHook from "../../CustomHooks/useGetHooks";
+// import { APIS } from "../api/hello";
+
+const Content = (props) => {
   return (
     <>
       <div className='content-wrapper'>
-        <p>
+        {props.content}
+        {/* <p>
           Efforts are under way to develop the world’s first operational quantum
           computers, which will mark a literal quantum leap forward in
           technology.
@@ -117,7 +123,7 @@ const Content = () => {
             Suggested Reading | Citibank, Swiss Crypto Firm Partner To Develop
             Bitcoin Custody Services
           </i>
-        </p>
+        </p> */}
       </div>
     </>
   );

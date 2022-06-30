@@ -1,16 +1,23 @@
 import React from 'react'
 
-const MainCard = () => {
+const MainCard = (props) => {
   return (
     <>
       <div className="main-card-wrapper">
-        <img
+        <div className='main-card-image-wrapper'>
+          <img
+            className="main-card-image"
+            // src="https://bitcoinist.com/wp-content/uploads/2022/06/quantum-computers-627x420.png"
+            src={props.image}
+          />
+        </div>
+        {/* <img
           className="main-card-image"
-          src="https://bitcoinist.com/wp-content/uploads/2022/06/quantum-computers-627x420.png"
-        />
+          // src="https://bitcoinist.com/wp-content/uploads/2022/06/quantum-computers-627x420.png"
+          src={props.image}
+        /> */}
         <div className="main-card-inner">
-          <h2>Quantum Computers Rise From Australian Lab</h2>
-          <h2>– A Threat To Cryptocurrency?</h2>
+          <h2><b>{props.title}</b></h2>
           <div className="main-card-image-wrapper">
             <img
               className="maincardimage"
@@ -18,8 +25,7 @@ const MainCard = () => {
             />
             <p>
               {" "}
-              by <span>Jet Encila</span> 22 mins ago in Crypto News,
-              Quantum Computing
+              by <span>{props.author}</span> {props.created} 
             </p>
           </div>
         </div>

@@ -1,17 +1,21 @@
 import React from 'react'
 
-const Recentpost = () => {
+const Recentpost = (props) => {
   return (
     <>
-      <div className='recentpost'>
-          <img className='recentpost-image' src="https://bitcoinist.com/wp-content/uploads/2022/06/Citi-120x86.jpg" />
-          <div className='recentpost-inner'>
-            <b>
-            Citibank, Swiss Crypto Firm Partner To Develop Bitcoin Custody
-            Services
-            </b>
-            <p>2 days ago</p>
-          </div>  
+      <div className="recentpost">
+        <div className='recentpost-image-wrapper'>
+          <img className="recentpost-image" src={props.image} />
+        </div>
+        {/* <img className="recentpost-image" src={props.image} /> */}
+        <div className="recentpost-inner">
+          <b>
+            {props.title?.slice(0,60)}
+            {/* Citibank, Swiss Crypto Firm Partner To Develop Bitcoin Custody
+            Services */}
+          </b>
+          <p>{props.created}</p>
+        </div>
       </div>
     </>
   );
