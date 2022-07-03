@@ -96,6 +96,7 @@ const Header = () => {
                   className="search-input-box"
                   value={keyword}
                   onChange={(e) => setKeyword(e.target.value)}
+                  searchtext={keyword}
                 />
                 <FaSearch className="input-search-icon" onClick={onclickHandler} />
               </div>

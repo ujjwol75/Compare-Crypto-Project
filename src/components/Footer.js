@@ -32,12 +32,11 @@ const Footer = () => {
               <li>News</li>
               <li>Price</li>
               <li>Business</li>
-              <li>News</li>
-              <li>Price</li>
-              <li>Business</li>
-              <li>News</li>
-              <li>Price</li>
-              <li>Business</li>
+              <li>Acceptance</li>
+              <li>Technology</li>
+              <li>Investment</li>
+              <li>Regulation</li>
+              <li>Reviews</li>
             </ul>
           </div>
           <div className="footer-list">
@@ -45,13 +44,11 @@ const Footer = () => {
             <ul className="footer-ul">
               <li>News</li>
               <li>Price</li>
-              <li>Business</li>
-              <li>News</li>
-              <li>Price</li>
-              <li>Business</li>
-              <li>News</li>
-              <li>Price</li>
-              <li>Business</li>
+              <li>Ethereum</li>
+              <li>Ripple</li>
+              <li>Litecoin</li>
+              <li>EOS</li>
+              <li>NAGA</li>
             </ul>
           </div>
           <div className="footer-list">

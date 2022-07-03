@@ -164,7 +164,7 @@
   color: white;
   padding: 30px;
   margin: 20px 40px;
-  width: 90vw;
+  width: 93vw;
 }
 
 .navbar-list{
@@ -272,10 +272,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   border:1px solid gainsboro;
   padding: 5px;
 
+}
+
+.latestnews-wrapper-inner a{
+  color: rgb(39, 38, 38);
+  text-decoration: none;
 }
 
 
@@ -296,6 +300,7 @@
 .latest-news-span{
   color: rgb(68, 67, 67);
   font-size: small;
+  margin-top: 10px;
 }
 
 .latest-news-span2{
@@ -332,7 +337,11 @@
   height: 50px;
   width: 60px;
   border-radius: 5px;
-  margin: 20px 10px 20px 0;
+  margin: 20px 3px 20px 0;
+}
+
+.topbroker-inner{
+  margin-right: 15px;
 }
 
 /* Top casino */
@@ -406,12 +415,13 @@
   list-style: none;
   padding-left: 0px;
   margin-left: -32px;
-  font-size: small;
+  font-size: 14px;
+  margin-top: 8px;
 
 }
 
 .footerspan{
-  font-size: small;
+  font-size: 14px;
   margin-top: 10px;
   color: rgb(88, 87, 87);
 }
@@ -659,8 +669,8 @@
 
 .search-page-input-field{
   padding: 15px;
-  width: 50%;
-  margin: auto;
+  width: 87%;
+  margin-left: 5px;
   background: whitesmoke;
 }
 
@@ -679,20 +689,48 @@
   outline: none;
   background: none;
   border: none;
+
 }
 
 .search-icon-wrapper{
   border: 1px solid blue;
-  height: 34px;
+  height: 44px;
   width: 84px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .search-icon-wrapper:hover{
   background: blue;
   color: white;
 }
+
+
+.search-page-wrapper{
+  padding: 40px;
+}
+
+.search-page-latest-news-sticker{
+  display: flex;
+  justify-content: center;
+}
+
+.search-page-latest-news{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-page-sticker{
+  display: flex;
+  flex-direction: column;
+}
+
+.search-page-sticker-image{
+  margin: 10px 0;
+}
+
+
 /* Mediaquery */
 
 /* Header */
@@ -789,6 +827,18 @@
     width: 100%;
   }
 
+  .search-page-latest-news-sticker{
+    flex-direction: column;
+  }
+
+  .search-page-wrapper{
+    padding: 10px;
+  }
+
+  .search-page-input-field{
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 @media (max-width:500px) {

@@ -44,9 +44,9 @@ const Index = () => {
             postData?.results?.map((curElem,key)=>{
               return(
                 <>
-                  <Link href="/Singlepage">
+                  {/* <Link href="/Singlepage"> */}
                     <LatestNews key={key} title={curElem?.title} image={curElem?.image} description={curElem?.description} author={curElem?.author} created={curElem?.created} id={curElem.id}/>
-                  </Link> 
+                  {/* </Link>  */}
                 </>
               )
             })

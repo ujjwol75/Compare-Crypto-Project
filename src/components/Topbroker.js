@@ -4,16 +4,16 @@ const Topbroker = () => {
   return (
     <>
     <div className='topbroker-wrapper'>
-      <div>
+      <div className='topbroker-inner'>
         <img className='topbroker-image' src="https://bitcoinist.com/wp-content/uploads/2021/04/Image-7@2x-min.jpg" />
         <span>Crypto.com</span>
       </div>
-      <div>
+      <div className='topbroker-inner'>
         <img className='topbroker-image' src="https://bitcoinist.com/wp-content/uploads/2021/04/Image-7@2x-min.jpg" />
         <span>Crypto.com</span>
       </div>
      </div> 
-    </>
+    </> 
   );
 }
 

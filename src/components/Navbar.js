@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import useGetHook from '../../CustomHooks/useGetHooks'
 import { FaAngleDown } from 'react-icons/fa'
 import { APIS } from '../../pages/api/hello';
@@ -15,6 +16,7 @@ const Navbar = () => {
     }
   );
   console.log(navigationListData);
+  
   // console.log('aa',navigationListData.results);
   return (
     <>
@@ -26,10 +28,16 @@ const Navbar = () => {
                 <>
                   <li>
                     <div className="dropdown" key={curElem.id}>
-                      <button className="dropbtn">
+                      <Link href={`/linkpage/${curElem.id}`}>
+                        <button className="dropbtn">
+                          {curElem.title}
+                          <FaAngleDown />
+                        </button>
+                      </Link>
+                      {/* <button className="dropbtn">
                         {curElem.title}
                         <FaAngleDown />
-                      </button>
+                      </button> */}
                       <div className="dropdown-content">
                         <a href="#">Link 1</a>
                         <a href="#">Link 2</a>
