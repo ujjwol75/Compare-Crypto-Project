@@ -6,13 +6,21 @@ const Sidebar = () => {
   const [show,setShow] = useState(false)
   return (
     <>
-      <div className="accordian" onClick={() => setShow(!show)}>
+      {/* <div className="accordian" onClick={() => setShow(!show)}>
         <div className="accordian-inner">
           <p>BITCOIN</p>
           {show ? <AiOutlineRight /> : <AiOutlineDown />}
         </div>
         {show && <Sidelist />}
-      </div>
+      </div> */}
+      <ul className='sidebar-ul'>
+        <li>Home</li>
+        <li>News</li>
+        <li>Post Article</li>
+        <li>NFT</li>
+        <li>Live Market</li>
+        <li>Contact</li>
+      </ul>
     </>
   );
 }

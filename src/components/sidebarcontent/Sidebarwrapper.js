@@ -12,13 +12,8 @@ const Sidebarwrapper = () => {
       <div className="sidebar-wrapper">
         <div className="sidebar">
           <Sidebar />
-          <Sidebar />
-          <Sidebar />
-          <Sidebar />
-          <Sidebar />
-          <Sidebar />
-          <p className="sidebar-p">Play Game</p>
-          <p Sidebar-p>BIT&WIN</p>
+          {/* <p className="sidebar-p">Play Game</p>
+          <p Sidebar-p>BIT&WIN</p> */}
         </div>
         <div>
           <ImFacebook className="icons" />

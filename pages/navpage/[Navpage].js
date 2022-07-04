@@ -15,7 +15,7 @@ import useGetHook from "../../CustomHooks/useGetHooks";
 import { APIS } from "../api/hello";
 
 
-const Linkpage = () => {
+const Navpage = () => {
     const { isLoading: navigationLoading, data: postData } = useGetHook({
       queryKey: "postData",
       url: APIS.posts,
@@ -85,4 +85,4 @@ const Linkpage = () => {
   );
 }
 
-export default Linkpage;
+export default Navpage;
