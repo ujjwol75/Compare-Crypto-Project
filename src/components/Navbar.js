@@ -22,7 +22,7 @@ const Navbar = () => {
     <>
       <div className='navbar'>
         <ul className="navbar-ul">
-          {
+          {/* {
             navigationListData?.results?.map((curElem)=>{
               return (
                 <>
@@ -34,171 +34,20 @@ const Navbar = () => {
                           <FaAngleDown />
                         </button>
                       </Link>
-                      {/* <button className="dropbtn">
-                        {curElem.title}
-                        <FaAngleDown />
-                      </button> */}
-                      <div className="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                      </div>
                     </div>
                   </li>
-                  {/* <li>
-                    <div className="dropdown">
-                      <button className="dropbtn">
-                        Dropdown
-                        <FaAngleDown />
-                      </button>
-                      <div className="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                      </div>
-                    </div>
-                  </li> */}
-                  {/* <li>
-                    <div className="dropdown">
-                      <button className="dropbtn">
-                        Dropdown
-                        <FaAngleDown />
-                      </button>
-                      <div className="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                      </div>
-                    </div>
-                  </li> */}
-                  {/* <li>
-                    <div className="dropdown">
-                      <button className="dropbtn">
-                        Dropdown
-                        <FaAngleDown />
-                      </button>
-                      <div className="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                      </div>
-                    </div>
-                  </li> */}
-                  {/* <li>
-                    <div className="dropdown">
-                      <button className="dropbtn">
-                        Dropdown
-                        <FaAngleDown />
-                      </button>
-                      <div className="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                      </div>
-                    </div>
-                  </li> */}
-                  {/* <li>
-                    <div className="dropdown">
-                      <button className="dropbtn">
-                        Dropdown
-                        <FaAngleDown />
-                      </button>
-                      <div className="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                      </div>
-                    </div>
-                  </li> */}
-                  {/* <li className="navbar-list">
-                    <b>{curElem.title}</b>
-                  </li> */}
                   <li className="navbar-list">BET&WIN</li>
                 </>
               );
             })
-          }
-          {/* <li>
-            <div className="dropdown">
-              <button className="dropbtn">
-                Dropdown
-                <FaAngleDown />
-              </button>
-              <div className="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div className="dropdown">
-              <button className="dropbtn">
-                Dropdown
-                <FaAngleDown />
-              </button>
-              <div className="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div className="dropdown">
-              <button className="dropbtn">
-                Dropdown
-                <FaAngleDown />
-              </button>
-              <div className="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div className="dropdown">
-              <button className="dropbtn">
-                Dropdown
-                <FaAngleDown />
-              </button>
-              <div className="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div className="dropdown">
-              <button className="dropbtn">
-                Dropdown
-                <FaAngleDown />
-              </button>
-              <div className="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div className="dropdown">
-              <button className="dropbtn">
-                Dropdown
-                <FaAngleDown />
-              </button>
-              <div className="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-              </div>
-            </div>
-          </li>
-          <li className="navbar-list">
-            <b>PLAY GAMES</b></li>
-          <li className="navbar-list">BET&WIN</li> */}
+          } */}
+          <li>Home</li>
+          <li>News</li>
+          <li>Research</li>
+          <li>Post Article</li>
+          <li>NFT</li>
+          <li>Live Market</li>
+          <li>Contact</li>
         </ul>
       </div>
     </>

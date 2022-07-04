@@ -6,6 +6,7 @@ import { BsTwitter } from "react-icons/bs";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
+import Link from 'next/link'
 
 import Sidebar from "./Sidebar";
 import Sidebarwrapper from "./sidebarcontent/Sidebarwrapper";
@@ -76,12 +77,12 @@ const Header = () => {
         )}
         {/* <GiHamburgerMenu className="navmenu" onClick={handleClick} /> */}
         {sidebar && <Sidebarwrapper />}
-        <div className="bitcoinlogo">
-          <img
-            className="bitcoinlogo-image"
-            src="https://bitcoinist.com/wp-content/uploads/2021/04/Logo-min.png"
-          />
-        </div>
+            <div className="bitcoinlogo" onClick={()=>router.push("/")}>
+              <img
+                className="bitcoinlogo-image"
+                src="https://bitcoinist.com/wp-content/uploads/2021/04/Logo-min.png"
+              />
+            </div>
         <div className="search-icon">
           {search ? (
             <ImCross onClick={iconClick} />
@@ -97,8 +98,12 @@ const Header = () => {
                   value={keyword}
                   onChange={(e) => setKeyword(e.target.value)}
                   searchtext={keyword}
+                  onClick={onclickHandler}
                 />
-                <FaSearch className="input-search-icon" onClick={onclickHandler} />
+                <FaSearch
+                  className="input-search-icon"
+                  onClick={onclickHandler}
+                />
               </div>
             </div>
           )}

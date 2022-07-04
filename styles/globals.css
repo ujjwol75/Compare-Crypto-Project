@@ -37,7 +37,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 10px 40px;
 }
 
 .header-socialmedia{
@@ -56,6 +56,7 @@
 .bitcoinlogo{
   max-width: 350px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .bitcoinlogo-image{
@@ -167,6 +168,10 @@
   width: 93vw;
 }
 
+.navbar-ul li{
+  cursor: pointer;
+}
+
 .navbar-list{
   color: rgb(231, 98, 8);
 }
@@ -252,7 +257,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 /* latest news   */
@@ -314,6 +319,21 @@
 
 .latestnews-font{
   font-size: large;
+}
+
+.latest-news-first-row{
+  /* border: 1px solid red; */
+  height: 1680px;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
 }
 
 
@@ -418,6 +438,10 @@
   font-size: 14px;
   margin-top: 8px;
 
+}
+
+.footer-ul li:hover{
+  cursor: pointer;
 }
 
 .footerspan{

@@ -54,15 +54,14 @@ const Footer = () => {
           <div className="footer-list">
             <b>CATEGORIES</b>
             <ul className="footer-ul">
-              <li>News</li>
-              <li>Price</li>
-              <li>Business</li>
-              <li>News</li>
-              <li>Price</li>
-              <li>Business</li>
-              <li>News</li>
-              <li>Price</li>
-              <li>Business</li>
+              <li>Blockchain</li>
+              <li>Security</li>
+              <li>FinTech</li>
+              <li>Technology</li>
+              <li>Trending</li>
+              <li>Breking News</li>
+              <li>Press releases</li>
+              <li>How to</li>
             </ul>
           </div>
           <div className="footer-list">
