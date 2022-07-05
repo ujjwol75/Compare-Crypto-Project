@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { ImCrop, ImCross, ImFacebook } from "react-icons/im";
 import { BsTwitter } from "react-icons/bs";
-import { FaTelegramPlane } from "react-icons/fa";
+import { FaTelegramPlane, FaWifi } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from 'next/link'
@@ -44,23 +44,35 @@ const Header = () => {
     <>
       <div className="header-wrapper">
         <div className="header-inner1">
-          <span>Press release</span>
-          <span>Press release</span>
-          <span>Press release</span>
+          <span>Press Releases</span>
+          <span>Advertise</span>
+          <span>Contact us</span>
         </div>
         <div className="header-inner2">
-          <div>
-            <span>BTC: $20,788.53</span>
-            <span>BTC: $20,788.53</span>
-            <span>BTC: $20,788.53</span>
-            <span>BTC: $20,788.53</span>
-            <span>BTC: $20,788.53</span>
+          <div className="header-inner2-data">
+            <span>
+              <b>BTC:</b> $20,328.51
+            </span>
+            <span>
+              <b>ETH:</b> $1,165.8
+            </span>
+            <span>
+              <b>DOGE:</b> $0.07
+            </span>
+            <span>
+              <b>XRP:</b> $0.33
+            </span>
+            <span>
+              <b>CRO:</b> $0.12
+            </span>
           </div>
-          <div className="header-logo">Logo</div>
+          <div className="header-logo">
+            <img className="header-logo-image" src="https://bitcoinist.com/wp-content/uploads/2021/05/cryptocom-logo.png" />
+          </div>
         </div>
       </div>
       <div className="banner">
-        <img src="https://servedbyadbutler.com/getad.img/;libID=3384544" />
+        <img src="https://servedbyadbutler.com/getad.img/;libID=979658" />
       </div>
 
       <div className="sub-header">
@@ -68,7 +80,7 @@ const Header = () => {
           <ImFacebook className="icons" />
           <BsTwitter className="icons" />
           <FaTelegramPlane className="icons" />
-          <ImFacebook className="icons" />
+          <FaWifi className="icons" />
         </div>
         {change ? (
           <ImCross onClick={handleClick} />
@@ -77,12 +89,12 @@ const Header = () => {
         )}
         {/* <GiHamburgerMenu className="navmenu" onClick={handleClick} /> */}
         {sidebar && <Sidebarwrapper />}
-            <div className="bitcoinlogo" onClick={()=>router.push("/")}>
-              <img
-                className="bitcoinlogo-image"
-                src="https://bitcoinist.com/wp-content/uploads/2021/04/Logo-min.png"
-              />
-            </div>
+        <div className="bitcoinlogo" onClick={() => router.push("/")}>
+          <img
+            className="bitcoinlogo-image"
+            src="https://bitcoinist.com/wp-content/uploads/2021/04/Logo-min.png"
+          />
+        </div>
         <div className="search-icon">
           {search ? (
             <ImCross onClick={iconClick} />

@@ -42,8 +42,6 @@ const Searchpage = () => {
 
   return (
     <>
-      <Header />
-      <Navbar />
       <div className="search-page-wrapper">
         <div className="search-page-latest-news-sticker">
           <div>
@@ -76,12 +74,6 @@ const Searchpage = () => {
                   </>
                 );
               })}
-              {/* <LatestNews />
-              <LatestNews />
-              <LatestNews />
-              <LatestNews />
-              <LatestNews />
-              <LatestNews /> */}
             </div>
           </div>
           <div className="search-page-sticker">
@@ -104,7 +96,6 @@ const Searchpage = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

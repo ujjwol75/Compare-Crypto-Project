@@ -6,32 +6,20 @@ const LatestNews = (props) => {
   return (
     <>
       <div className="latestnews-wrapper">
-        <img className="latestnews-image" src={props?.image} />
+        <div className='latestnews-image'>
+          <img className="latestnews-image" src={props.image} />
+        </div>
         <div className="latestnews-wrapper-inner">
-          {/* {`/Singlepage?id=${id}`} */}
           <Link href={`/detailpage/${id}`}>
             <a>
-              <b className="latestnews-font">{props?.title?.slice(0, 60)}</b>
+              <b className="latestnews-font">{props.title}</b>
             </a>
           </Link>
-          {/* <span className="latest-news-span1">
-            {props?.description}
-          </span> */}
           <span className="latest-news-span">
-            by <span className="latest-news-span2">{props?.author} </span>
-            {props?.created}
+            by <span className="latest-news-span2">{props.author} </span>
+            {props.created}
           </span>
         </div>
-        {/* <b className="latestnews-font">
-          CZ Comment On Crypto Bailouts, Why Some Projects Shouldn’t Be “Saved”
-        </b>
-        <span className="latest-news-span1">
-          The CEO of the world’s largest crypto exchange Binance Changpeng “CZ”
-          Zhao addressed the bailout happening in the industry. As...
-        </span>
-        <span className="latest-news-span">
-          by <span className="latest-news-span2">Best Owie </span>8 hours ago
-        </span> */}
       </div>
     </>
   );

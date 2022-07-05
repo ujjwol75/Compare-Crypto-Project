@@ -1,6 +1,4 @@
 import React,{useEffect, useState} from 'react'
-import Header from '../src/components/Header'
-import Navbar from '../src/components/Navbar'
 import RecentNews from '../src/components/RecentNews'
 import LatestNews from '../src/components/LatestNews'
 import Premiumpartner from '../src/components/Premiumpartner'
@@ -9,8 +7,6 @@ import Topbroker from '../src/components/Topbroker'
 import Topcasino from '../src/components/Topcasino'
 import Pressrelease from '../src/components/Pressrelease'
 
-
-import Footer from '../src/components/Footer'
 import Link from 'next/link'
 
 
@@ -19,7 +15,6 @@ import useGetHook from '../CustomHooks/useGetHooks'
 import { APIS } from './api/hello';
 
 const Index = () => {
-  const [firstrowdata,setFirstRowData] = useState([])
 
   const { isLoading: navigationLoading, data: postData } = useGetHook(
     {
@@ -28,67 +23,67 @@ const Index = () => {
     }
   );
   console.log(postData);
-  // let data = []
-  // postData?.result?.map((curElem,index)=>{
-  //   if (index > 2){
-
-  //   }
-  //   else{
-  //     data.push(curElem)
-  //   }
-  // })
-  // setFirstRowData(data)
-  // console.log("Data:",data);
-
-      let data = [];
-
-  useEffect(()=>{
-    // let data = [];
-    postData?.result?.map((curElem, index) => {
-      if (index > 2) {
-        console.log("More than two data");
-      } else {
-        data.push(curElem);
-        console.log("DAta:",data);
-      }
-    });
-    setFirstRowData(data);
-    console.log("Data:", data);
-  },[postData])
-
-  console.log("Firstrowdata:",firstrowdata);
 
   return (
     <>
-      <Header />
-      <Navbar />
       <div className="recent-news-wrapper">
-        <RecentNews />
-        <RecentNews />
-        <RecentNews />
+        <RecentNews
+          image={
+            "https://bitcoinist.com/wp-content/uploads/2022/07/bitcoin-miners.jpeg"
+          }
+        />
+        <RecentNews
+          image={
+            "https://bitcoinist.com/wp-content/uploads/2021/07/china-162389_1280.png"
+          }
+        />
+        <RecentNews
+          image={
+            "https://bitcoinist.com/wp-content/uploads/2022/07/non-fungible-token-g95024f755_1280.png"
+          }
+        />
       </div>
-      <div className='banner'>
-        <img src='https://servedbyadbutler.com/getad.img/;libID=3393246'/>
+      <div className="banner">
+        <img src="https://servedbyadbutler.com/getad.img/;libID=979658" />
       </div>
-      <div className='latest-news-topics'>
-        <p><b>Latest News</b></p>
-        <hr className='latest-news-topics-hr'/>
+      <div className="latest-news-topics">
+        <p>
+          <b>Latest News</b>
+        </p>
+        <hr className="latest-news-topics-hr" />
+      </div>
+      <div className="latestnews-first-three-data">
+        {postData?.results?.slice(0, 3)?.map((curElem, key) => {
+          return (
+            <>
+              <LatestNews
+                image={curElem.image}
+                title={curElem.title}
+                created={curElem.created}
+                author={curElem.author}
+              />
+            </>
+          );
+        })}
       </div>
       <div className="latest-news-outer">
         <div className="latest-news-first-row">
-          {
-            firstrowdata?.map((curElem,key)=>{
-              return(
-                <>
-                  <LatestNews key={key} title={curElem?.title} image={curElem?.image} description={curElem?.description} author={curElem?.author} created={curElem?.created} id={curElem.id}/>
-                </>
-              )
-            })
-          }
+          {postData?.results?.slice(3)?.map((curElem, key) => {
+            return (
+              <>
+                <LatestNews
+                  key={key}
+                  image={curElem?.image}
+                  title={curElem?.title}
+                  created={curElem.created}
+                  author={curElem.author}
+                />
+              </>
+            );
+          })}
         </div>
 
-        <div className='premium'>
-            {/* <LatestNews title={postData?.results?.title} image={postData?.results?.image} author={postData?.results?.author} created={postData?.results?.created}/> */}
+        <div className="premium">
           <hr />
           <div>
             <b>Premium Partners</b>
@@ -97,7 +92,33 @@ const Index = () => {
           <hr />
           <div>
             <b>Premiun Casino Partners</b>
-            <Premiumcasino />
+            <div className='premium-image-wrapper'>
+              <Premiumcasino
+                image={
+                  "https://bitcoinist.com/wp-content/uploads/2021/04/BitStarz@2x-min-2.png"
+                }
+              />
+              <Premiumcasino
+                image={
+                  "https://bitcoinist.com/wp-content/uploads/2022/01/punt-casino-logo1.png"
+                }
+              />
+              <Premiumcasino
+                image={
+                  "https://bitcoinist.com/wp-content/uploads/2022/03/Logo_BCGames.png"
+                }
+              />
+              <Premiumcasino
+                image={
+                  "https://bitcoinist.com/wp-content/uploads/2021/12/cryptoslots.jpg"
+                }
+              />
+              <Premiumcasino
+                image={
+                  "https://bitcoinist.com/wp-content/uploads/2022/03/IMAGE-2022-03-04-135412.jpg"
+                }
+              />
+            </div>
           </div>
           <hr />
           <div>
@@ -112,11 +133,18 @@ const Index = () => {
           <hr />
           <div>
             <b>Press Releases</b>
-            <Pressrelease />
+            {
+              postData?.results?.slice(0,7)?.map((curElem,key)=>{
+                return(
+                  <>
+                   <Pressrelease image={curElem?.image}/>
+                  </>
+                )
+              })
+            }
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

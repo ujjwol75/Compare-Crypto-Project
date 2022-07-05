@@ -1,28 +1,12 @@
 import React from 'react'
 
-const Premiumcasino = () => {
+const Premiumcasino = (props) => {
   return (
     <>
-      <div>
+      <div className=''>
         <img
           className="premium-image"
-          src="https://bitcoinist.com/wp-content/uploads/2021/04/BitStarz@2x-min-2.png"
-        />
-        <img
-          className="premium-image"
-          src="https://bitcoinist.com/wp-content/uploads/2021/04/BitStarz@2x-min-2.png"
-        />
-        <img
-          className="premium-image"
-          src="https://bitcoinist.com/wp-content/uploads/2021/04/BitStarz@2x-min-2.png"
-        />
-        <img
-          className="premium-image"
-          src="https://bitcoinist.com/wp-content/uploads/2021/04/BitStarz@2x-min-2.png"
-        />
-        <img
-          className="premium-image"
-          src="https://bitcoinist.com/wp-content/uploads/2021/04/BitStarz@2x-min-2.png"
+          src={props.image}
         />
       </div>
     </>

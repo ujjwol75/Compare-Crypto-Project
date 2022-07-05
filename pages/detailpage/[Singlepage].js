@@ -47,8 +47,6 @@ console.log("singlepostdata", singlePostsData);
       singlePostsData?.results
     } */}
       <h1>{props.curElem}</h1>
-      <Header />
-      <Navbar />
       <MainCard image={singlePostsData?.image} title={singlePostsData?.title} author={singlePostsData?.author} created={singlePostsData?.created}/>
       <div className="singlepage-wrapper">
         <div className="sinlgepage">
@@ -79,10 +77,13 @@ console.log("singlepostdata", singlePostsData);
           <Sideimage />
         </div>
       </div>
-
-      <Footer />
     </>
   );
 }
 
 export default Singlepage
+
+export function getServerSideProps ({params}){
+  console.log(params);
+
+}
