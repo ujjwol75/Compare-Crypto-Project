@@ -1,7 +1,7 @@
 import React from 'react'
 import { ImFacebook } from 'react-icons/im';
 import { BsTwitter } from "react-icons/bs";
-import { FaTelegramPlane } from "react-icons/fa";
+import { FaTelegramPlane, FaWifi } from "react-icons/fa";
 import { GoSearch } from "react-icons/go";
 
 const Footer = () => {
@@ -23,7 +23,7 @@ const Footer = () => {
               <ImFacebook className='footer-icon'/>
               <BsTwitter className='footer-icon'/>
               <FaTelegramPlane className='footer-icon'/>
-              <ImFacebook className='footer-icon'/>
+              <FaWifi className='footer-icon'/>
             </div>
           </div>
           <div className="footer-list">
