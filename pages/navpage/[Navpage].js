@@ -1,56 +1,45 @@
-import React from 'react'
+import React from "react";
 import Header from "../../src/components/Header";
 import Navbar from "../../src/components/Navbar";
 import Footer from "../../src/components/Footer";
-import LatestNews from '../../src/components/LatestNews';
-import Premiumcasino from '../../src/components/Premiumcasino';
-import Premiumpartner from '../../src/components/Premiumpartner';
-import Topbroker from '../../src/components/Topbroker';
-import Topcasino from '../../src/components/Topcasino';
-import Pressrelease from '../../src/components/Pressrelease';
-
+import LatestNews from "../../src/components/LatestNews";
+import Premiumcasino from "../../src/components/Premiumcasino";
+import Premiumpartner from "../../src/components/Premiumpartner";
+import Topbroker from "../../src/components/Topbroker";
+import Topcasino from "../../src/components/Topcasino";
+import Pressrelease from "../../src/components/Pressrelease";
 
 import "bootstrap/dist/css/bootstrap.css";
 import useGetHook from "../../CustomHooks/useGetHooks";
 import { APIS } from "../api/hello";
 
-
 const Navpage = () => {
-    const { isLoading: navigationLoading, data: postData } = useGetHook({
-      queryKey: "postData",
-      url: APIS.posts,
-    });
-    // console.log(sunuma);
+  const { isLoading: navigationLoading, data: postData } = useGetHook({
+    queryKey: "postData",
+    url: APIS.posts,
+  });
 
   return (
     <>
       <Header />
       <Navbar />
-
       <div className="latest-news-outer">
         <div className="latest-news-first-row">
-          {postData?.results?.map((curElem, key) => {
-            return (
-              <>
-                {/* <Link href="/Singlepage"> */}
-                <LatestNews
-                  key={key}
-                  title={curElem?.title}
-                  image={curElem?.image}
-                  description={curElem?.description}
-                  author={curElem?.author}
-                  created={curElem?.created}
-                  id={curElem.id}
-                />
-                {/* </Link>  */}
-              </>
-            );
-          })}
+          {postData?.results?.map((curElem, key) => (
+            <LatestNews
+              key={key}
+              title={curElem?.title}
+              image={curElem?.image}
+              description={curElem?.description}
+              author={curElem?.author}
+              created={curElem?.created}
+              id={curElem.id}
+            />
+          ))}
         </div>
 
         <div>
           <div>
-            {/* <LatestNews title={postData?.results?.title} image={postData?.results?.image} author={postData?.results?.author} created={postData?.results?.created}/> */}
             <hr />
             <div>
               <b>Premium Partners</b>
@@ -83,6 +72,6 @@ const Navpage = () => {
       <Footer />
     </>
   );
-}
+};
 
 export default Navpage;

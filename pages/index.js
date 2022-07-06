@@ -1,29 +1,21 @@
-import React,{useEffect, useState} from 'react'
-import RecentNews from '../src/components/RecentNews'
-import LatestNews from '../src/components/LatestNews'
-import Premiumpartner from '../src/components/Premiumpartner'
-import Premiumcasino from '../src/components/Premiumcasino'
-import Topbroker from '../src/components/Topbroker'
-import Topcasino from '../src/components/Topcasino'
-import Pressrelease from '../src/components/Pressrelease'
+import React, { useEffect, useState } from "react";
+import RecentNews from "../src/components/RecentNews";
+import LatestNews from "../src/components/LatestNews";
+import Premiumpartner from "../src/components/Premiumpartner";
+import Premiumcasino from "../src/components/Premiumcasino";
+import Topbroker from "../src/components/Topbroker";
+import Topcasino from "../src/components/Topcasino";
+import Pressrelease from "../src/components/Pressrelease";
+import { getApiData } from "../Helper/Axiosinstance";
 
-import Link from 'next/link'
+import Link from "next/link";
 
+import "bootstrap/dist/css/bootstrap.css";
+import useGetHook from "../CustomHooks/useGetHooks";
+import { APIS } from "./api/hello";
 
-import 'bootstrap/dist/css/bootstrap.css'
-import useGetHook from '../CustomHooks/useGetHooks'
-import { APIS } from './api/hello';
-
-const Index = () => {
-
-  const { isLoading: navigationLoading, data: postData } = useGetHook(
-    {
-      queryKey: "postData",
-      url: APIS.posts,
-    }
-  );
-  console.log(postData);
-
+const Index = (props) => {
+  const {posts} = props
   return (
     <>
       <div className="recent-news-wrapper">
@@ -53,34 +45,28 @@ const Index = () => {
         <hr className="latest-news-topics-hr" />
       </div>
       <div className="latestnews-first-three-data">
-        {postData?.results?.slice(0, 3)?.map((curElem, key) => {
-          return (
-            <>
-              <LatestNews
-                image={curElem.image}
-                title={curElem.title}
-                created={curElem.created}
-                author={curElem.author}
-              />
-            </>
-          );
-        })}
+        {posts?.results?.slice(0, 3)?.map((curElem, key) => (
+          <LatestNews
+            slug={curElem?.slug}
+            image={curElem.image}
+            title={curElem.title}
+            created={curElem.created}
+            author={curElem.author}
+          />
+        ))}
       </div>
       <div className="latest-news-outer">
         <div className="latest-news-first-row">
-          {postData?.results?.slice(3)?.map((curElem, key) => {
-            return (
-              <>
-                <LatestNews
-                  key={key}
-                  image={curElem?.image}
-                  title={curElem?.title}
-                  created={curElem.created}
-                  author={curElem.author}
-                />
-              </>
-            );
-          })}
+          {posts?.results?.slice(3)?.map((curElem, key) => (
+            <LatestNews
+              key={key}
+              slug={curElem?.slug}
+              image={curElem?.image}
+              title={curElem?.title}
+              created={curElem.created}
+              author={curElem.author}
+            />
+          ))}
         </div>
 
         <div className="premium">
@@ -92,7 +78,7 @@ const Index = () => {
           <hr />
           <div>
             <b>Premiun Casino Partners</b>
-            <div className='premium-image-wrapper'>
+            <div className="premium-image-wrapper">
               <Premiumcasino
                 image={
                   "https://bitcoinist.com/wp-content/uploads/2021/04/BitStarz@2x-min-2.png"
@@ -133,20 +119,24 @@ const Index = () => {
           <hr />
           <div>
             <b>Press Releases</b>
-            {
-              postData?.results?.slice(0,7)?.map((curElem,key)=>{
-                return(
-                  <>
-                   <Pressrelease image={curElem?.image}/>
-                  </>
-                )
-              })
-            }
+            {posts?.results?.slice(0, 7)?.map((curElem, key) => (
+              <Pressrelease image={curElem?.image} slug={curElem?.slug} />
+            ))}
           </div>
         </div>
       </div>
     </>
   );
-}
+};
 
-export default Index
+export default Index;
+
+export async function getServerSideProps({ params }) {
+  const url = APIS.posts
+  const posts = await getApiData(url);
+  return {
+    props: {
+      posts: posts?.data,
+    }, // will be passed to the page component as props
+  };
+}

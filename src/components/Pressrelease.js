@@ -6,9 +6,7 @@ const Pressrelease = (props) => {
     <>
       <div className="pressrelease-wrapper">
         <div className="pressrelease-image-wrapper">
-          <Image
-            height={100}
-            width={100}
+          <img
             className="pressrelease-image"
             src={props.image}
           />

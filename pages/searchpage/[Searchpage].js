@@ -1,44 +1,42 @@
-import React, { useState } from 'react'
-import Header from '../../src/components/Header'
-import Navbar from '../../src/components/Navbar'
-import Footer from '../../src/components/Footer'
-import LatestNews from '../../src/components/LatestNews'
-import { FaSearch } from 'react-icons/fa'
+import React, { useState } from "react";
+import Header from "../../src/components/Header";
+import Navbar from "../../src/components/Navbar";
+import Footer from "../../src/components/Footer";
+import LatestNews from "../../src/components/LatestNews";
+import { FaSearch } from "react-icons/fa";
 
 import "bootstrap/dist/css/bootstrap.css";
 import useGetHook from "../../CustomHooks/useGetHooks";
 import { APIS } from "../api/hello";
-import { useRouter } from 'next/router'
-
+import { useRouter } from "next/router";
 
 const Searchpage = () => {
-   
-  const [keyword,setKeyword] =useState(" ")
+  const [keyword, setKeyword] = useState(" ");
 
-   const { isLoading: navigationLoading, data: postData } = useGetHook({
-     queryKey: "postData",
-     url: APIS.posts,
-   });
-   console.log("Postdata", postData?.results);
+  const { isLoading: navigationLoading, data: postData } = useGetHook({
+    queryKey: "postData",
+    url: APIS.posts,
+  });
+  console.log("Postdata", postData?.results);
 
-   const router = useRouter();
-   console.log("Router-query:",router.query);
-   const { Searchpage } = router.query;
-   console.log("Singlepage", Searchpage);
+  const router = useRouter();
+  console.log("Router-query:", router.query);
+  const { Searchpage } = router.query;
+  console.log("Singlepage", Searchpage);
 
-   const { isLoading: singlePostsLoading, data: singlePostsData } = useGetHook({
-     queryKey: `singlePostsData-${Searchpage}`,
-     url: `${APIS.posts}?search=${Searchpage}`,
-   });
-   // {curElem?.slice(0,5)}
-   console.log("singlepostdata", singlePostsData);
+  const { isLoading: singlePostsLoading, data: singlePostsData } = useGetHook({
+    queryKey: `singlePostsData-${Searchpage}`,
+    url: `${APIS.posts}?search=${Searchpage}`,
+  });
+  // {curElem?.slice(0,5)}
+  console.log("singlepostdata", singlePostsData);
 
-   const onclickHandler = (e) =>{
+  const onclickHandler = (e) => {
     e.preventDefault();
-    if (keyword!==" "){
-      router.push(`/searchpage/${keyword}`)
+    if (keyword !== " ") {
+      router.push(`/searchpage/${keyword}`);
     }
-   }
+  };
 
   return (
     <>
@@ -61,19 +59,15 @@ const Searchpage = () => {
               </div>
             </div>
             <div className="search-page-latest-news">
-              {singlePostsData?.results.map((curElem, key) => {
-                return (
-                  <>
-                    <LatestNews
-                      key={key}
-                      image={curElem.image}
-                      title={curElem.title}
-                      author={curElem.author}
-                      created={curElem.created}
-                    />
-                  </>
-                );
-              })}
+              {singlePostsData?.results.map((curElem, key) => (
+                <LatestNews
+                  key={key}
+                  image={curElem.image}
+                  title={curElem.title}
+                  author={curElem.author}
+                  created={curElem.created}
+                />
+              ))}
             </div>
           </div>
           <div className="search-page-sticker">
@@ -98,6 +92,6 @@ const Searchpage = () => {
       </div>
     </>
   );
-}
+};
 
-export default Searchpage
+export default Searchpage;

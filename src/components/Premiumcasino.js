@@ -6,7 +6,7 @@ const Premiumcasino = (props) => {
       <div className=''>
         <img
           className="premium-image"
-          src={props.image}
+          src={props?.image}
         />
       </div>
     </>

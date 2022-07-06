@@ -10,7 +10,7 @@ const LatestNews = (props) => {
           <img className="latestnews-image" src={props.image} />
         </div>
         <div className="latestnews-wrapper-inner">
-          <Link href={`/detailpage/${id}`}>
+          <Link href={`/detailpage/${props?.slug}`}>
             <a>
               <b className="latestnews-font">{props.title}</b>
             </a>
