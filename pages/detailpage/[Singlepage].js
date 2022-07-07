@@ -17,7 +17,6 @@ import { APIS } from "../api/hello";
 import { getApiData } from "../../Helper/Axiosinstance";
 
 const Singlepage = (props) => {
-  console.log("props", props.singlePost)
   return (
     <>
       <h1>{props.curElem}</h1>
@@ -37,6 +36,7 @@ const Singlepage = (props) => {
           <div className="recentpost-wrapper">
             {props?.singlePost?.related_posts?.map((curElem, key) => (
               <Recentpost
+                slug={curElem?.slug}
                 key={key}
                 image={curElem.image}
                 title={curElem.title}

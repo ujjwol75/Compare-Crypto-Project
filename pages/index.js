@@ -16,6 +16,13 @@ import { APIS } from "./api/hello";
 
 const Index = (props) => {
   const {posts} = props
+  
+  const [visible,setVisible] = useState(9)
+
+  const showMoreItems = () =>{
+    setVisible((prevValue)=>prevValue+4)
+  }
+
   return (
     <>
       <div className="recent-news-wrapper">
@@ -29,7 +36,7 @@ const Index = (props) => {
             "https://bitcoinist.com/wp-content/uploads/2021/07/china-162389_1280.png"
           }
         />
-        <RecentNews
+        <RecentNews className="recent-news-third-content"
           image={
             "https://bitcoinist.com/wp-content/uploads/2022/07/non-fungible-token-g95024f755_1280.png"
           }
@@ -57,7 +64,7 @@ const Index = (props) => {
       </div>
       <div className="latest-news-outer">
         <div className="latest-news-first-row">
-          {posts?.results?.slice(3)?.map((curElem, key) => (
+          {posts?.results?.slice(3,visible)?.map((curElem, key) => (
             <LatestNews
               key={key}
               slug={curElem?.slug}
@@ -67,6 +74,8 @@ const Index = (props) => {
               author={curElem.author}
             />
           ))}
+          <span className="latestnews-load-more" onClick={showMoreItems}>Load More</span>
+
         </div>
 
         <div className="premium">
@@ -117,7 +126,7 @@ const Index = (props) => {
             <Topcasino />
           </div>
           <hr />
-          <div>
+          <div className="pressrelease-outer">
             <b>Press Releases</b>
             {posts?.results?.slice(0, 7)?.map((curElem, key) => (
               <Pressrelease image={curElem?.image} slug={curElem?.slug} />

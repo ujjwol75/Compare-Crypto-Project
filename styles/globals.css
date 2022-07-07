@@ -102,6 +102,7 @@
   background-color: #fff;
   border: 1px solid gainsboro;
   background: whitesmoke;
+  z-index: 10px;
 
 }
 
@@ -243,7 +244,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .news{
@@ -261,7 +261,7 @@
   flex-direction: column;
   height:100px;
   position: absolute;
-  bottom: 30px;
+  bottom: 50px;
   padding: 0 30px;
 }
 
@@ -388,6 +388,19 @@
   margin-right: 10px;
 }
 
+.latestnews-load-more{
+  width: 100%;
+  border: 1px solid rgb(38, 174, 228);
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.latestnews-load-more:hover{
+  background: rgb(38, 174, 228);
+  color: #fff;
+}
+
 /* Latest-news-outer */
 
 .latest-news-outer{
@@ -456,6 +469,13 @@
 }
 
 /* press release */
+
+.pressrelease-outer{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
 .pressrelease-wrapper{
   display: flex;
   padding: 10px 0;
@@ -879,10 +899,11 @@
   .newsletter-inner .btn{
     margin-top: 10px;
   }
-/* 
-  .recentpost{
-    flex-direction: column;
-  } */
+
+  .premium{
+    padding-left: 15px;
+    width: 100%;
+  }
 
   .author{
     flex-direction: column;
@@ -911,10 +932,18 @@
     padding: 15px;
   }
 
+  .latest-news-first-row{
+    width: 100%;
+  }
+
+  .banner{
+    display: none;
+  }
+
   
 }
 
-@media (max-width:900px) {
+@media (max-width:800px) {
   .recent-news-wrapper{
     flex-wrap: wrap;
     justify-content: start;
@@ -927,6 +956,11 @@
   }
 
   .news{
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .recentnews-image-wrapper{
     width: 100%;
   }
 
@@ -953,8 +987,17 @@
     margin-left: 0;
   }
 
-  .latestnews-first-three-data{
+  /* .latestnews-first-three-data{
     flex-wrap: wrap;
+    justify-content: flex-start;
+  } */
+}
+
+@media (max-width:750px) {
+   .latestnews-first-three-data{
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
   }
 }
 
@@ -970,13 +1013,6 @@
 
   .related-post-text b{
     width: 50%;
-}
-.latest-news-first-row{
-  width: 100%;
+}  
 }
 
-.premium{
-  padding-left: 15px;
-}
-  
-}

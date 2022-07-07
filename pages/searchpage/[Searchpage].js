@@ -8,33 +8,30 @@ import { FaSearch } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.css";
 import useGetHook from "../../CustomHooks/useGetHooks";
 import { APIS } from "../api/hello";
+import { getApiData } from "../../Helper/Axiosinstance";
 import { useRouter } from "next/router";
 
-const Searchpage = () => {
+const Searchpage = (props) => {
+  console.log(props,"search data");
   const [keyword, setKeyword] = useState(" ");
 
-  const { isLoading: navigationLoading, data: postData } = useGetHook({
-    queryKey: "postData",
-    url: APIS.posts,
-  });
-  console.log("Postdata", postData?.results);
+  // const { isLoading: navigationLoading, data: postData } = useGetHook({
+  //   queryKey: "postData",
+  //   url: APIS.posts,
+  // });
 
   const router = useRouter();
-  console.log("Router-query:", router.query);
   const { Searchpage } = router.query;
-  console.log("Singlepage", Searchpage);
 
-  const { isLoading: singlePostsLoading, data: singlePostsData } = useGetHook({
-    queryKey: `singlePostsData-${Searchpage}`,
-    url: `${APIS.posts}?search=${Searchpage}`,
-  });
-  // {curElem?.slice(0,5)}
-  console.log("singlepostdata", singlePostsData);
+  // const { isLoading: singlePostsLoading, data: singlePostsData } = useGetHook({
+  //   queryKey: `singlePostsData-${Searchpage}`,
+  //   url: `${APIS.posts}?search=${Searchpage}`,
+  // });
 
   const onclickHandler = (e) => {
     e.preventDefault();
     if (keyword !== " ") {
-      router.push(`/searchpage/${keyword}`);
+      router.push(`/searchpage/${Searchpage}`);
     }
   };
 
@@ -59,7 +56,7 @@ const Searchpage = () => {
               </div>
             </div>
             <div className="search-page-latest-news">
-              {singlePostsData?.results.map((curElem, key) => (
+              {props?.searchPost?.results?.map((curElem, key) => (
                 <LatestNews
                   key={key}
                   image={curElem.image}
@@ -95,3 +92,17 @@ const Searchpage = () => {
 };
 
 export default Searchpage;
+
+export async function getServerSideProps({ params }) {
+  const { Searchpage } = params;
+  const url = `${APIS.posts}?search=${Searchpage}`;
+  const searchPost = await getApiData(url);
+  // console.log("https://insidecrypto.news/api/posts/?search=Web3","backend");
+  // console.log(`${APIS.posts}${Searchpage}`,"timro");
+  return {
+    props: {
+      searchPost: searchPost?.data,
+    }, // will be passed to the page component as props
+  };
+}
+
