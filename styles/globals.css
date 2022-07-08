@@ -244,7 +244,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid green; */
   padding: 10px 40px;
 }
 
@@ -877,6 +876,26 @@
 
 
 /* Mediaquery */
+
+@media (max-width:1600px) {
+
+/* .news{
+  width: 500px;
+}
+
+.recentnews-image-wrapper{
+  width: 100%;
+}
+
+.latestnews-wrapper{
+  max-width: 480px;
+}
+
+.latest-news-first-row{
+  margin-right: 30px;
+} */
+
+}
 
 @media (max-width:1170px) {
 
