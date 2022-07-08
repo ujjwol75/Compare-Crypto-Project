@@ -24,7 +24,9 @@ const Navbar = () => {
             <li>News</li>
           </Link>
           <li>Research</li>
-          <li>Post Article</li>
+          <Link href="/postarticle">
+            <li>Post Article</li>
+          </Link>
           <li>NFT</li>
           <li>Live Market</li>
           <li>Contact</li>

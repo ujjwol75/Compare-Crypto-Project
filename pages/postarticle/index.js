@@ -1,7 +1,7 @@
-import React,{useState} from 'react'
-import { APIS } from '../api/hello'
-import { getApiData } from '../../Helper/Axiosinstance'
-import LatestNews from '../../src/components/LatestNews'
+import React, { useState } from "react";
+import { APIS } from "../api/hello";
+import { getApiData } from "../../Helper/Axiosinstance";
+import LatestNews from "../../src/components/LatestNews";
 import Premiumpartner from "../../src/components/Premiumpartner";
 import Premiumcasino from "../../src/components/Premiumcasino";
 import Topbroker from "../../src/components/Topbroker";
@@ -9,32 +9,33 @@ import Topcasino from "../../src/components/Topcasino";
 import Pressrelease from "../../src/components/Pressrelease";
 
 const New = (props) => {
+  const { posts } = props;
 
-  const {posts} = props
-  
-  const [visible,setVisible] = useState(9)
+  const [visible, setVisible] = useState(9);
 
-  const showMoreItems = () =>{
-    setVisible((prevValue)=>prevValue+4)
-  }
+  const showMoreItems = () => {
+    setVisible((prevValue) => prevValue + 4);
+  };
 
   return (
     <>
-     <h2 className='nav-title'><b>News</b></h2>
-     <div className="latest-news-outer">
+      <h2 className="nav-title">
+        <b>Post Article</b>
+      </h2>
+      <div className="latest-news-outer">
         <div className="latest-news-first-row">
-            {posts?.results?.slice(3, visible)?.map((curElem, key) => (
-              <React.Fragment key={key}>
-                <LatestNews
-                  key={key}
-                  slug={curElem?.slug}
-                  image={curElem?.image}
-                  title={curElem?.title}
-                  created={curElem.created}
-                  author={curElem.author}
-                />
-              </React.Fragment>
-            ))}
+          {posts?.results?.slice(3, visible)?.map((curElem, key) => (
+            <React.Fragment key={key}>
+              <LatestNews
+                key={key}
+                slug={curElem?.slug}
+                image={curElem?.image}
+                title={curElem?.title}
+                created={curElem.created}
+                author={curElem.author}
+              />
+            </React.Fragment>
+          ))}
           <span className="latestnews-load-more" onClick={showMoreItems}>
             Load More
           </span>
@@ -91,20 +92,20 @@ const New = (props) => {
             <b>Press Releases</b>
             {posts?.results?.slice(0, 7)?.map((curElem, key) => (
               <React.Fragment key={key}>
-                 <Pressrelease image={curElem?.image} slug={curElem?.slug} />
+                <Pressrelease image={curElem?.image} slug={curElem?.slug} />
               </React.Fragment>
             ))}
           </div>
         </div>
-      </div>  
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default New
+export default New;
 
 export async function getServerSideProps({ params }) {
-  const url = APIS.posts
+  const url = APIS.posts;
   const posts = await getApiData(url);
   return {
     props: {
