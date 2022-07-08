@@ -9,6 +9,6 @@ const optimizedImages = require("next-optimized-images");
 
 module.exports = {
   images: {
-    domains: ["insidecrypto.news"],
+    domains: ["insidecrypto.news", "servedbyadbutler.com"],
   },
 };

@@ -7,6 +7,7 @@ import Topbroker from "../src/components/Topbroker";
 import Topcasino from "../src/components/Topcasino";
 import Pressrelease from "../src/components/Pressrelease";
 import { getApiData } from "../Helper/Axiosinstance";
+import Image from 'next/image';
 
 import Link from "next/link";
 
@@ -36,14 +37,15 @@ const Index = (props) => {
             "https://bitcoinist.com/wp-content/uploads/2021/07/china-162389_1280.png"
           }
         />
-        <RecentNews className="recent-news-third-content"
+        <RecentNews
+          className="recent-news-third-content"
           image={
             "https://bitcoinist.com/wp-content/uploads/2022/07/non-fungible-token-g95024f755_1280.png"
           }
         />
       </div>
       <div className="banner">
-        <img src="https://servedbyadbutler.com/getad.img/;libID=979658" />
+        <Image src="https://servedbyadbutler.com/getad.img/;libID=979658" layout="fill"/>
       </div>
       <div className="latest-news-topics">
         <p>
@@ -53,29 +55,34 @@ const Index = (props) => {
       </div>
       <div className="latestnews-first-three-data">
         {posts?.results?.slice(0, 3)?.map((curElem, key) => (
-          <LatestNews
-            slug={curElem?.slug}
-            image={curElem.image}
-            title={curElem.title}
-            created={curElem.created}
-            author={curElem.author}
-          />
+          <React.Fragment key={key} >
+            <LatestNews
+              slug={curElem?.slug}
+              image={curElem.image}
+              title={curElem.title}
+              created={curElem.created}
+              author={curElem.author}
+            />
+          </React.Fragment>
         ))}
       </div>
       <div className="latest-news-outer">
         <div className="latest-news-first-row">
-          {posts?.results?.slice(3,visible)?.map((curElem, key) => (
-            <LatestNews
-              key={key}
-              slug={curElem?.slug}
-              image={curElem?.image}
-              title={curElem?.title}
-              created={curElem.created}
-              author={curElem.author}
-            />
-          ))}
-          <span className="latestnews-load-more" onClick={showMoreItems}>Load More</span>
-
+            {posts?.results?.slice(3, visible)?.map((curElem, key) => (
+              <React.Fragment key={key}>
+                <LatestNews
+                  key={key}
+                  slug={curElem?.slug}
+                  image={curElem?.image}
+                  title={curElem?.title}
+                  created={curElem.created}
+                  author={curElem.author}
+                />
+              </React.Fragment>
+            ))}
+          <span className="latestnews-load-more" onClick={showMoreItems}>
+            Load More
+          </span>
         </div>
 
         <div className="premium">
