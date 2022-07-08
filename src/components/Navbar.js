@@ -2,6 +2,7 @@ import React from 'react'
 import useGetHook from '../../CustomHooks/useGetHooks'
 import { FaAngleDown } from 'react-icons/fa'
 import { APIS } from '../../pages/api/hello';
+import Link from 'next/link';
 
 const Navbar = () => {
   const { isLoading: navigationLoading, data: navigationListData } = useGetHook(
@@ -14,12 +15,16 @@ const Navbar = () => {
   
   return (
     <>
-      <div className='navbar'>
+      <div className="navbar">
         <ul className="navbar-ul">
-          <li>Home</li>
-          <li>News</li>
+          <Link href="/">
+            <li>Home</li>
+          </Link>
+          <Link href="/news">
+            <li>News</li>
+          </Link>
           <li>Research</li>
-          <li>Post Article</li>                                                                                                                                                                     
+          <li>Post Article</li>
           <li>NFT</li>
           <li>Live Market</li>
           <li>Contact</li>

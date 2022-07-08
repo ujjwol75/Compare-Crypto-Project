@@ -15,18 +15,10 @@ const Searchpage = (props) => {
   console.log(props,"search data");
   const [keyword, setKeyword] = useState(" ");
 
-  // const { isLoading: navigationLoading, data: postData } = useGetHook({
-  //   queryKey: "postData",
-  //   url: APIS.posts,
-  // });
 
   const router = useRouter();
   const { Searchpage } = router.query;
 
-  // const { isLoading: singlePostsLoading, data: singlePostsData } = useGetHook({
-  //   queryKey: `singlePostsData-${Searchpage}`,
-  //   url: `${APIS.posts}?search=${Searchpage}`,
-  // });
 
   const onclickHandler = (e) => {
     e.preventDefault();
