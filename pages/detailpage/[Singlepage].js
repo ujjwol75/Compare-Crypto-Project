@@ -1,27 +1,20 @@
 import React from "react";
-import Header from "../../src/components/Header";
-import Navbar from "../../src/components/Navbar";
-import Footer from "../../src/components/Footer";
 import MainCard from "../../src/components/MainCard";
 import Content from "../../src/components/Content";
 import SocialMedia from "../../src/components/SocialMedia";
 import Newsletter from "../../src/components/Newsletter";
 import Author from "../../src/components/Author";
-import Recentpost from "../../src/components/Recentpost";
 import Sideimage from "../../src/components/Sideimage";
-import { useRouter } from "next/router";
-
-import "bootstrap/dist/css/bootstrap.css";
-import useGetHook from "../../CustomHooks/useGetHooks";
 import { APIS } from "../api/hello";
 import { getApiData } from "../../Helper/Axiosinstance";
+import RecentPostWrapper from "../../src/components/RecentPostWrapper";
 
 const Singlepage = (props) => {
+  console.log("props",props?.singlePost);
   return (
     <>
-      <h1>{props.curElem}</h1>
       <MainCard singlepagedata={props?.singlePost} />
-      <div className="singlepage-wrapper">
+      <div className="singlepage-wrapper container">
         <div className="sinlgepage">
           <Content content={props?.singlePost} />
           <SocialMedia />
@@ -33,19 +26,9 @@ const Singlepage = (props) => {
             <b>Related Posts</b>
             <hr className="singlepage-hr" />
           </div>
-          <div className="recentpost-wrapper">
-            {props?.singlePost?.related_posts?.map((curElem, key) => (
-              <Recentpost
-                slug={curElem?.slug}
-                key={key}
-                image={curElem.image}
-                title={curElem.title}
-                created={curElem.created}
-              />
-            ))}
-          </div>
+           <RecentPostWrapper/>
         </div>
-        <div>
+        <div className="singlepage-sideimage">
           <Sideimage />
         </div>
       </div>

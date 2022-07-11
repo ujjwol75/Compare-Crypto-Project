@@ -4,7 +4,7 @@ const MainCard = (props) => {
   const {singlepagedata} = props
   return (
     <>
-      <div className="main-card-wrapper">
+      <div className="main-card-wrapper container">
         <div className="main-card-image-wrapper">
           <img className="main-card-image" src={singlepagedata?.image} />
         </div>

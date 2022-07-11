@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 import { ImCrop, ImCross, ImFacebook } from "react-icons/im";
 import { BsTwitter } from "react-icons/bs";
 import { FaTelegramPlane, FaWifi } from "react-icons/fa";
@@ -10,7 +8,7 @@ import Link from 'next/link'
 
 import Sidebar from "./Sidebar";
 import Sidebarwrapper from "./sidebarcontent/Sidebarwrapper";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 
 
 const Header = () => {
@@ -18,31 +16,31 @@ const Header = () => {
   const [fullscreen, setFullscreen] = useState(true);
   const [show, setShow] = useState(false);
   const [sidebar, setSidebar] = useState(false);
-  const [change,setChange] = useState(false);
-  const [search,setSearch] = useState(false)
+  const [change, setChange] = useState(false);
+  const [search, setSearch] = useState(false)
   const [keyword, setKeyword] = useState('');
 
-  const router=useRouter()
+  const router = useRouter()
 
   const handleClick = () => {
-    setChange(!change);setSidebar(!sidebar);
+    setChange(!change); setSidebar(!sidebar);
   };
 
-  const iconClick = () =>{
+  const iconClick = () => {
     setSearch(!search)
     console.log("Button click");
   }
- 
-  const onclickHandler = (e) =>{
+
+  const onclickHandler = (e) => {
     e.preventDefault();
-    if(keyword!== ''){
+    if (keyword !== '') {
       router.push(`/searchpage/${keyword}`);
-    }    
+    }
   }
 
   return (
     <>
-      <div className="header-wrapper">
+      <div className="header-wrapper container">
         <div className="header-inner1">
           <span>Press Releases</span>
           <span>Advertise</span>
@@ -71,11 +69,13 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="banner">
-        <img src="https://servedbyadbutler.com/getad.img/;libID=979658" />
+      <div className="banner container">
+        <div className="bannerImgholder">
+          <img src="https://servedbyadbutler.com/getad.img/;libID=979658" />
+        </div>
       </div>
 
-      <div className="sub-header">
+      <div className="sub-header container">
         <div className="header-socialmedia">
           <ImFacebook className="icons" />
           <BsTwitter className="icons" />

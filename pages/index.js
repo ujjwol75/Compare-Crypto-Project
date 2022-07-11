@@ -8,10 +8,7 @@ import Topcasino from "../src/components/Topcasino";
 import Pressrelease from "../src/components/Pressrelease";
 import { getApiData } from "../Helper/Axiosinstance";
 import Image from 'next/image';
-
 import Link from "next/link";
-
-import "bootstrap/dist/css/bootstrap.css";
 import useGetHook from "../CustomHooks/useGetHooks";
 import { APIS } from "./api/hello";
 
@@ -26,7 +23,7 @@ const Index = (props) => {
 
   return (
     <>
-      <div className="recent-news-wrapper">
+      <div className="recent-news-wrapper container">
         <RecentNews
           image={
             "https://bitcoinist.com/wp-content/uploads/2022/07/bitcoin-miners.jpeg"
@@ -44,16 +41,18 @@ const Index = (props) => {
           }
         />
       </div>
-      <div className="banner">
-        <Image src="https://servedbyadbutler.com/getad.img/;libID=979658" layout="fill" alt=""/>
+      <div className="banner container">
+        <div className="bannerImgholder">
+          <img src="https://servedbyadbutler.com/getad.img/;libID=979658" />
+        </div>
       </div>
-      <div className="latest-news-topics">
+      <div className="latest-news-topics container">
         <p>
           <b>Latest News</b>
         </p>
         <hr className="latest-news-topics-hr" />
       </div>
-      <div className="latestnews-first-three-data">
+      <div className="latestnews-first-three-data container">
         {posts?.results?.slice(0, 3)?.map((curElem, key) => (
           <React.Fragment key={key} >
             <LatestNews
@@ -66,9 +65,9 @@ const Index = (props) => {
           </React.Fragment>
         ))}
       </div>
-      <div className="latest-news-outer">
+      <div className="latest-news-outer container">
         <div className="latest-news-first-row">
-            {posts?.results?.slice(3, visible)?.map((curElem, key) => (
+            {posts?.results?.map((curElem, key) => (
               <React.Fragment key={key}>
                 <LatestNews
                   key={key}

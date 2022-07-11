@@ -1,18 +1,17 @@
 import React from 'react'
 
 const Recentpost = (props) => {
-  const {singlepagedata} = props
   return (
     <>
       <div className="recentpost">
         <div className='recentpost-image-wrapper'>
-          <img className="recentpost-image" src={singlepagedata?.image} />
+          <img className="recentpost-image" src={props.image} />
         </div>
-        <div className="recentpost-inner">
+        <div className="recentpost-content">
           <b>
-            {singlepagedata?.title?.slice(0,60)}
+            {props.title}
           </b>
-          <p>{singlepagedata?.created}</p>
+          <p>{props.created}</p>
         </div>
       </div>
     </>

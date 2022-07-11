@@ -3,7 +3,7 @@ import React from 'react'
 const RecentNews = (props) => {
   return (
     <>
-      <div className="news">
+      <div className="news" >
         <div className='recentnews-image-wrapper'>
           <img className="recentnews-image" src={props.image} />
         </div>

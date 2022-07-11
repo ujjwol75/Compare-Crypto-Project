@@ -11,11 +11,11 @@ const Navbar = () => {
       url: APIS.navigation,
     }
   );
-  console.log(navigationListData);
+  // console.log(navigationListData);
   
   return (
     <>
-      <div className="navbar">
+      <div className="navbar container">
         <ul className="navbar-ul">
           <Link href="/">
             <li>Home</li>
