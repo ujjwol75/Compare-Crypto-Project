@@ -255,12 +255,13 @@ h2 {
 }
 
 .footerBottomWrapper {
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   position: sticky;
   bottom: 0;
-  background-color: white;
+  z-index:20;
 }
 
 .footer-bottom {
@@ -977,7 +978,9 @@ textarea {
   .RelatedPostWrapper {
     flex-direction: column;
   }
-
+  .SingleDetail-content {
+      left: 75px;
+  }
   /* SingleDetailWrapper ends here */
 }
 
