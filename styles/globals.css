@@ -261,7 +261,7 @@ h2 {
   align-items: center;
   position: sticky;
   bottom: 0;
-  z-index:20;
+  z-index: 20;
 }
 
 .footer-bottom {
@@ -893,8 +893,8 @@ textarea {
   }
 
   .hometop-content {
-    bottom: 14px;
-    left: 168px;
+    bottom: 35px;
+    left: 70px;
     width: 600px;
   }
 
@@ -978,9 +978,11 @@ textarea {
   .RelatedPostWrapper {
     flex-direction: column;
   }
+
   .SingleDetail-content {
-      left: 75px;
+    left: 75px;
   }
+
   /* SingleDetailWrapper ends here */
 }
 
