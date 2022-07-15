@@ -10,6 +10,7 @@ function SearchPage(props) {
     <>
       <Head>
         <title>CryptoCompare - Search</title>
+        <link rel="shortcut icon" type="image/x-icon" href="compare.png" />
       </Head>
       <SearchPageWrapper data={props?.searchPageData} />
     </>
