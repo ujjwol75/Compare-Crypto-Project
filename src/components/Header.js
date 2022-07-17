@@ -11,7 +11,9 @@ import Sidebarwrapper from "./sidebarcontent/Sidebarwrapper";
 import { useRouter } from "next/router";
 
 
-const Header = () => {
+const Header = (props) => {
+
+  const { headerData, nuCoinData } = props;
   const values = [true, "sm-down", "md-down", "lg-down", "xl-down", "xxl-down"];
   const [fullscreen, setFullscreen] = useState(true);
   const [show, setShow] = useState(false);
@@ -49,20 +51,25 @@ const Header = () => {
         <div className="header-inner2">
           <div className="header-inner2-data">
             <span>
-              <b>BTC:</b> $20,328.51
+              <b>BTC:</b> {`$${headerData?.RAW?.BTC?.USD?.PRICE}`}
             </span>
             <span>
-              <b>ETH:</b> $1,165.8
+              <b>ETH:</b> {`$${headerData?.RAW?.ETH?.USD?.PRICE}`}
             </span>
             <span>
-              <b>DOGE:</b> $0.07
+              <b>DOGE:</b> {`$${headerData?.RAW?.DOGE?.USD?.PRICE}`}
             </span>
             <span>
-              <b>XRP:</b> $0.33
+              <b>XRP:</b> {`$${headerData?.RAW?.XRP?.USD?.PRICE}`}
             </span>
             <span>
-              <b>CRO:</b> $0.12
+              <b>SOL:</b> {`$${headerData?.RAW?.SOL?.USD?.PRICE}`}
             </span>
+            {nuCoinData?.results?.map((item, key) => (
+            <span key={key}>
+              <b>{item?.name}:</b> {item?.price_rate}
+              </span>
+               ))}
           </div>
           <div className="header-logo">
             <img className="header-logo-image" src="https://bitcoinist.com/wp-content/uploads/2021/05/cryptocom-logo.png" />
