@@ -1,4 +1,7 @@
-export const APIS = {
+export const APIs={
   navigation:'/navigation/',
-  posts:'/posts/'
+  posts:'/posts/',
+  bannerImage:'/banner-image/',
+  newsLetter: '/newsletter-subscription/',
+  contactForm:'contact-us/'
 }

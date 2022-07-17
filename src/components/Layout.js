@@ -53,14 +53,4 @@ const Layout = ({children}) => {
   )
 }
 
-export default Layout
-
-export async function getServerSideProps({ params }) {
-  const url = APIS.posts;
-  const posts = await getApiData(url);
-  return {
-    props: {
-      posts: posts?.data,
-    }, // will be passed to the page component as props
-  };
-}
+export default Layout;
